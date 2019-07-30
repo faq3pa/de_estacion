@@ -1,4 +1,6 @@
 from datetime import date
+import csv
+
 today = date.today()
 date = int(today.strftime('%m%d'))
 
@@ -14,5 +16,22 @@ def get_season(n):
 	return season
 
 estacion = get_season(date)
+#print(estacion)
 
-print ('Hoy es ',today.strftime('%d'),' de ',today.strftime('%B'),'\nEstamos en ',estacion)
+#print ('Hoy es ',today.strftime('%d'),' de ',today.strftime('%B'),'\nEstamos en ',estacion)
+
+verduras = []
+
+def seasoncsv(INPUT):
+    with open(INPUT, "r") as f_in:
+        reader = csv.reader(f_in) 
+        for row in reader:
+            if row[1] == estacion:
+                verduras.append(row[0])	
+#               print (row[1])     
+    return
+    
+seasoncsv('de_estacion.csv')
+
+print ('Hoy es ',today.strftime('%d'),' de ',today.strftime('%B'),', estamos en ',estacion,'. Las verduras para comer en ',estacion,' son:',sep='',end=" ")
+print (*verduras, sep = ", ")
