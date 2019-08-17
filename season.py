@@ -16,9 +16,6 @@ def get_season(n):
 	return season
 
 estacion = get_season(date)
-#print(estacion)
-
-#print ('Hoy es ',today.strftime('%d'),' de ',today.strftime('%B'),'\nEstamos en ',estacion)
 
 verduras = []
 
@@ -27,11 +24,10 @@ def seasoncsv(INPUT):
         reader = csv.reader(f_in) 
         for row in reader:
             if row[1] == estacion:
-                verduras.append(row[0])	
-#               print (row[1])     
+                verduras.append(row[0])
     return
     
-seasoncsv('de_estacion.csv')
+seasoncsv('data/de_estacion.csv')
 
 print ('Hoy es ',today.strftime('%d'),' de ',today.strftime('%B'),', estamos en ',estacion,'. Las verduras para comer en ',estacion,' son:',sep='',end=" ")
 print (*verduras, sep = ", ")
