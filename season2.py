@@ -56,15 +56,21 @@ seasoncsv_ver('data/de_estacion - hortalizas.csv')
 seasoncsv_fru('data/de_estacion - frutas.csv')
 
 print ('Hoy es ',today.strftime('%d'),' de ',today.strftime('%B'),', estamos en ',estacion,'.',sep='')
-print ('Las verduras para comer en ',today.strftime('%B'),' son:',sep='',end=" ")
-print (*verduras, sep = ", ")
-print ('Acaban de entrar:',end=" ")
-print (*inpver, sep = ", ")
-print ('Es la ultima oportinidad para:',end=" ")
-print (*outver, sep = ", ")
-print ('Las frutas para comer en ',today.strftime('%B'),' son:',sep='',end=" ")
-print (*frutas, sep = ", ")
-print ('Acaban de entrar:',end=" ")
-print (*inpfru, sep = ", ")
-print ('Es la ultima oportinidad para:',end=" ")
-print (*outfru, sep = ", ")
+if verduras != []:
+    print ('Las verduras para comer en ',today.strftime('%B'),' son:',sep='',end=" ")
+    print (*verduras, sep = ", ")
+if inpver != []:
+    print ('Acaban de entrar:',end=" ")
+    print (*inpver, sep = ", ")
+if outver != []:
+    print ('Es la ultima oportinidad para:',end=" ")
+    print (*outver, sep = ", ")
+if frutas != []:
+    print ('Las frutas para comer en ',today.strftime('%B'),' son:',sep='',end=" ")
+    print (*frutas, sep = ", ")
+if inpfru != []:
+    print ('Acaban de entrar:',end=" ")
+    print (*inpfru, sep = ", ")
+if outfru != []:
+    print ('Es la ultima oportinidad para:',end=" ")
+    print (*outfru, sep = ", ")
