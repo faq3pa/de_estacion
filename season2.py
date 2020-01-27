@@ -1,6 +1,8 @@
 from datetime import date
+import locale
 import csv
 
+locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 today = date.today()
 date = int(today.strftime('%m%d'))
 m = int(today.strftime('%m')) 
