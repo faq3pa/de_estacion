@@ -1,0 +1,9 @@
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  background-color: beige;
+}
+
+p {
+  white-space: pre-wrap;
+}
