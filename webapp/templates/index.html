@@ -1,27 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html id="top">
   <head>
     <title>Destación</title>
-    <meta name="description" content="Verduras y frutas de estación en Argentina, al alcance de tu mano. Comer bien, hace bien.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+    <meta
+      name="description"
+      content="Verduras y frutas de estación en Argentina, al alcance de tu mano. Comer bien, hace bien."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png')}}">
-    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest')}}">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163957999-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    gtag('config', 'UA-163957999-1');
-  </script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='apple-touch-icon.png')}}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='favicon-32x32.png')}}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='favicon-16x16.png')}}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='site.webmanifest')}}"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-163957999-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-163957999-1");
+    </script>
   </head>
   <body>
-    <h1><img src="{{ url_for('static', filename='header-820x312.png')}}" width="350"/></h1>
-    <p>{{ time|safe }}</p>
+    <section id="content">
+      <h1><img src="{{ url_for('static', filename='header-820x312.png')}}" width="350px" /></h1>
+      <p>{{ time|safe }}</p>
+      <div id="footer"><a href="#about"><b>¿Querés saber más?</b></a></div>
+    </section>
+    <section id="about">
+      <br>
+      Los datos son obtenidos del <a href="http://www.mercadocentral.gob.ar/" target="_blank"><b>Mercado Central</b></a>, el <a href="https://www.argentina.gob.ar/agricultura-ganaderia-y-pesca" target="_blank"><b>MAGyP</b></a> y el <a href="https://www.argentina.gob.ar/inta" target="_blank"><b>INTA</b></a>.
+      <br><br>
+      Seguinos:<br>
+      <a href="https://twitter.com/_destacion" target="_blank"><b>Twitter</b></a> // <a href="https://www.instagram.com/_destacion/" target="_blank"><b>Instagram</b></a>
+      <br><br>
+      ¿Tenés feedback? Escribinos a <a href="mailto:holadestacion@gmail.com"><b>holadestacion@gmail.com</b></a>
+      <br><br><br><br>
+    </section>
+    <a href="#top"><button id="myBtn" title="Go to top"><i class="fa fa-angle-up" style="font-size:25px;color:#3f4830"></i></button></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800);
+        }
+      });
+    })
+    </script>
+    <script>
+      mybutton = document.getElementById("myBtn");
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>

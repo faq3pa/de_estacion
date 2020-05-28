@@ -10,11 +10,11 @@ def get_season(n):
     if n >= 321 and n < 621:  
         season = 'OTOÑO'
     elif n >= 621 and n < 921: 
-        season = 'invierno'
+        season = 'INVIERNO'
     elif n >= 921 and n < 1221: 
-        season = 'primavera' 
+        season = 'PRIMAVERA' 
     else: 
-        season = 'verano' 
+        season = 'VERANO' 
     return season
 
 def seasoncsv_ver(INPUT):
@@ -77,9 +77,9 @@ def season():
     seasoncsv_ver('data/de_estacion - hortalizas.csv')
     seasoncsv_fru('data/de_estacion - frutas.csv')
         
-    result = 'Hoy es '+today.strftime('%d')+' de '+today.strftime('%B')+', estamos en '+estacion+'.<br/>'
+    result = 'Hoy es '+today.strftime('%d')+' de '+today.strftime('%B').capitalize()+', estamos en '+estacion+'.<br/>'
     if verduras != []:
-        result = result+'<br/>Las <b>verduras</b> para comer en '+today.strftime('%B')+' son: '+', '.join(verduras)+'.<br/>'
+        result = result+'<br/>Las <b>verduras</b> para comer en '+today.strftime('%B').capitalize()+' son: '+', '.join(verduras)+'.<br/>'
     if inpver != []:
         result = result+'Acaban de entrar: '+', '.join(inpver)+'.<br/>'
     if outver != []:
@@ -101,4 +101,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
-    #app.run(debug=True, host='192.168.0.145')
+    #app.run(debug=True, host='192.168.0.252', port=5009)
