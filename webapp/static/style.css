@@ -1,9 +1,8 @@
 body {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   background-color: #f1f0ef;
-  margin: 0;  /* Para que no rellene de forma predeterminada */
-  /*padding: 0;  Para que no rellene de forma predeterminada */
+  margin: 0;
 }
 
 p {
@@ -11,7 +10,6 @@ p {
   padding: 30px;
 }
 
-/* Todo lo de abajo es lo necesario para separar las partes del sitio y que cada una funcione como hablamos */
 a {
   text-decoration: none;
   color: #3f4830
@@ -30,8 +28,7 @@ section:target {
 }
 
 #content {
-  /*padding: 0; */
-  height: 100vh; /* Esto le dice al #content que ocupe el 100% del alto del dispositivo */
+  height: 100vh;
   background-color: #f1f0ef;
 }
 
@@ -46,8 +43,6 @@ section:target {
 #about {
   transition-timing-function: ease;
   padding: 15px;
-  /*margin: 0;
-  height: 100vh; */
   background-color:#daa2ba;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
