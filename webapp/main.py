@@ -3,6 +3,7 @@ from flask import Flask, render_template
 import csv
 import locale
 import pytz
+import random
 
 locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 
@@ -44,8 +45,6 @@ def seasoncsv_fru(INPUT):
     return
 
 def season():
-#    now = datetime.datetime.now()
-#    today = date.today()
     tz = pytz.timezone("America/Argentina/Buenos_Aires")
     today = datetime.now(tz)
     dateseason = int(today.strftime('%m%d'))
@@ -92,12 +91,24 @@ def season():
         result = result+'Es la última oportunidad para: '+', '.join(outfru)+'.<br/>'
     return result
 
+def quote():
+    list = [
+        "<i>~ comer por colores ~</i>",
+        "<i>~ tiempo para una cocción justa ~</i>",
+        "<i>~ conectar con la tierra ~</i>",
+        "<i>~ los sabores son cultura ~</i>",
+        "<i>~ darle una oportunidad a lo desconocido ~</i>",
+        "<i>~ apostar a la diversidad ~</i>"]
+    random_list = random.choice(list)
+    return random_list
+
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     webresult = season()
-    return render_template('index.html', time=webresult)
+    webquote = quote()
+    return render_template('index.html', time=webresult, space=webquote)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
