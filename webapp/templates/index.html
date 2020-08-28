@@ -33,9 +33,12 @@
   </head>
   <body>
     <section id="content">
-      <h1><img src="{{ url_for('static', filename='header-820x312.png')}}" alt="Header Destación" width="350px" /></h1>
+      <h1><img src="{{ url_for('static', filename='header-820x312.png')}}" alt="Header Destación" width="350px"/></h1>
       <p>{{ time|safe }}</p>
-      <div id="footer"><a href="#about"><b>¿Querés saber más?</b></a></div>
+      <div id="footer">
+        Invitanos un <a href="https://cafecito.app/destacion" target="_blank"><b>cafecito ☕️</b></a><br>
+        <a href="#about"><b>¿Querés saber más?</b></a>
+      </div>
     </section>
     <section id="about">
       <br>
